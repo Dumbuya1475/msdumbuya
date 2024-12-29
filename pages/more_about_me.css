@@ -1,0 +1,100 @@
+.about-me-container {
+  /* max-width: 900px; */
+  /* margin: 50px auto; */
+  padding: 20px;
+  /* background-color: #fff; */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+header.intro {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--extra-color);
+  padding-bottom: 20px;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.intro-text h1 {
+  font-size: 3.4rem;
+  color: #333;
+  text-align: center;
+  width: 65rem;
+}
+
+.intro-text p {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 18px;
+  color: #555;
+}
+
+section {
+  margin-top: 40px;
+}
+.resume-section{
+  margin: 2.5rem 0;
+  /* border: 2px solid black; */
+}
+.resume-section p {
+  font-size: large;
+  margin: 1rem 0;
+  border-bottom: 2px solid var(--extra-color);
+  width: fit-content;
+}
+h2 {
+  font-size: 20px;
+  color: #333;
+  border-bottom: 2px solid var(--extra-color);
+  padding-bottom: 5px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 20px;
+}
+h4 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: decimal;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0;
+}
+
+.resume-section ul li {
+  margin-bottom: 10px;
+  list-style-type:disc;
+  list-style-position: inside;
+  margin-left: 1rem;
+  font-size: large;
+}
+
+ul li strong {
+  font-weight: bold;
+  color: var(--extra-color);
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
