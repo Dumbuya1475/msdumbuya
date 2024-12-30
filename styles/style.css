@@ -137,12 +137,14 @@ main {
 img {
   width: 3rem;
 }
-.nav-links .active{
+
+.nav-links .active {
   color: var(--extra-color);
   color: red;
   /* background-color: rebeccapurple; */
 }
-#header nav ul li>.active{
+
+#header nav ul li>.active {
   color: var(--extra-color);
 }
 
@@ -296,7 +298,7 @@ img {
   color: var(--primary-bg);
 }
 
-.hire-me-btn:hover + .about-me-btn {
+.hire-me-btn:hover+.about-me-btn {
   background-color: var(--extra-color);
   color: var(--primary-bg);
 }
@@ -719,7 +721,7 @@ hr {
   }
 
   #header {
-    padding: 1rem 0;
+    padding: 0rem 0;
   }
 
   #hero {
@@ -747,6 +749,10 @@ hr {
   .hero-img-content {
     justify-content: center;
     align-items: center;
+  }
+
+  #download-resume {
+    margin-top: 1rem;
   }
 
   .hero-img-content img {
@@ -792,6 +798,10 @@ hr {
     padding: 0rem 0;
   }
 
+  .about-me-btn {
+    margin-top: 1rem;
+  }
+
   .about-me-img-content img {
     width: 100%;
   }
@@ -802,12 +812,21 @@ hr {
     gap: 1.5rem;
   }
 
+  .see-more-btn {
+    margin-top: 1rem;
+  }
+
   /* Skills section style [Phone] */
   .tech-stacks {
+    /* column-gap: 300px; */
+  }
+  .tech-stacks {
     grid-template-columns: repeat(2, 1fr);
+    columns: 300px;
   }
 
   .tech-stacks .stack {
+    width: 100%;
     border: 1px solid var(--border-color);
   }
 
@@ -841,7 +860,7 @@ hr {
     display: none;
   }
 
-  header {
+  .header {
     padding: 0rem 0;
   }
 
@@ -849,7 +868,7 @@ hr {
     flex-direction: column-reverse;
     gap: 1rem;
     max-width: 90%;
-    margin: 2rem 0;
+    margin: 0rem 0;
     justify-content: center;
     height: 100vh;
   }
@@ -871,7 +890,13 @@ hr {
     gap: 1.2rem;
     flex-direction: row;
   }
-
+    #hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column-reverse;
+      padding-top: 2rem;
+      justify-content:flex-end;
+    }
   .hero-img-content ul li {
     border-radius: 50% 30%;
   }

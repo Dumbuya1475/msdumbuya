@@ -1,9 +1,10 @@
+.about-me-img-content img {
+  width: 30rem;
+  border-radius: 70% 50%;
+}
+
 .about-me-container {
-  /* max-width: 900px; */
-  /* margin: 50px auto; */
-  padding: 20px;
-  /* background-color: #fff; */
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  margin-top: 2rem;
 }
 
 header.intro {
@@ -38,16 +39,19 @@ header.intro {
 section {
   margin-top: 40px;
 }
-.resume-section{
+
+.resume-section {
   margin: 2.5rem 0;
   /* border: 2px solid black; */
 }
+
 .resume-section p {
   font-size: large;
   margin: 1rem 0;
   border-bottom: 2px solid var(--extra-color);
   width: fit-content;
 }
+
 h2 {
   font-size: 20px;
   color: #333;
@@ -57,9 +61,10 @@ h2 {
 
 h3 {
   font-size: 1.5rem;
-  color: #333;
+  color: var(--extra-color);
   margin-top: 20px;
 }
+
 h4 {
   font-size: 1.3rem;
   color: #333;
@@ -75,9 +80,8 @@ ul {
 
 .resume-section ul li {
   margin-bottom: 10px;
-  list-style-type:disc;
-  list-style-position: inside;
-  margin-left: 1rem;
+  list-style-type: disc;
+  margin-left: 2.5rem;
   font-size: large;
 }
 
@@ -97,4 +101,76 @@ footer {
 footer p {
   margin: 0;
   font-size: 14px;
+}
+
+/* MEDIA QUREY */
+@media (max-width: 767px) {
+  #about-me {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-me-container {
+    padding: 2rem;
+  }
+
+  .about-me-img-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-me-img-content img {
+    width: 81%;
+    border-radius: 50%;
+  }
+
+  .about-me-text-content header,
+  .about-me-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .about-me-text-content h3 {
+    width: fit-content;
+    text-align: center;
+  }
+
+  .about-me-text-content {
+    text-align: center;
+  }
+
+  .intro-text {
+    padding: 2rem;
+  }
+
+  .intro-text h1 {
+    text-align: center;
+    width: 100%;
+    margin: 1rem 0;
+    font-size: 2.5rem;
+  }
+
+  .intro-text p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-me-container {
+    padding: 1rem;
+  }
+
+  .intro-text h1 {
+    text-align: center;
+    width: 100%;
+    margin: 0.5rem 0;
+    font-size: 2rem;
+  }
 }
