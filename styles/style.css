@@ -47,7 +47,7 @@ img {
   color: var(--primary-color);
 }
 
-header h3 {
+header h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
   color: var(--extra-color);
