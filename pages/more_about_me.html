@@ -1,11 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+      content="Mohamed Super Dumbuya's portfolio: A passionate software engineer specializing in front-end development, showcasing projects, skills, and services to create user-friendly and visually appealing web experiences.">
+    <meta name="keywords"
+      content="Mohamed Super Dumbuya, msdumbuya, Mohamed Super, MSD, msd, portfolio, software engineer, front-end developer, web development, projects, skills, tech stack">
+    <meta name="author" content="Mohamed Super Dumbuya">
+    <meta name="robots" content="index, follow">
+  
+    <!-- Open Graph Meta Tags (for social media sharing) -->
+    <meta property="og:title" content="Mohamed Super Dumbuya - Software Engineer Portfolio">
+    <meta property="og:description"
+      content="Discover the projects, skills, and expertise of Mohamed Super Dumbuya, a front-end developer committed to innovation and quality.">
+    <meta property="og:image" content="https://msdumbuya.tech/images/me1.png">
+    <meta property="og:url" content="https://msdumbuya.tech">
+    <meta property="og:type" content="website">
+  
+    <!-- Twitter Card Meta Tags (for Twitter sharing) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mohamed Super Dumbuya - Software Engineer Portfolio">
+    <meta name="twitter:description"
+      content="Explore Mohamed Super Dumbuya's portfolio, featuring innovative projects and a passion for web development.">
+    <meta name="twitter:image" content="https://msdumbuya.tech/images/me7.png">
+  
+    <!-- Canonical URL (prevents duplicate content issues) -->
+    <link rel="canonical" href="https://msdumbuya.tech">
+  
+    <!-- Page Title -->
+    <title>Mohamed Super Dumbuya - Software Engineer Portfolio</title>
+  
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://msdumbuya.tech/favicon.png">
+  
+    <!-- Preconnect to Google Fonts for Faster Loading -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/nav_bar.css">
+  
+    <!-- Icons & Fonts -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  
+    <!-- JSON-LD Structured Data for SEO (Schema.org) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mohamed Super Dumbuya",
+        "jobTitle": "Software Engineer | Front-End Developer",
+        "url": "https://msdumbuya.tech",
+        "image": "https://msdumbuya.tech/images/me7.png",
+        "description": "A passionate front-end developer specializing in creating user-friendly and visually appealing websites.",
+        "sameAs": [
+          "https://www.linkedin.com/in/mohamed-super-dumbuya-036034289/",
+          "https://github.com/Dumbuya1475",
+          "https://x.com/msdumbuya1475"
+        ]
+      }
+    </script>  
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Homepage</title>
-  <link rel="stylesheet" href="./styles/style.css">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
@@ -21,71 +82,41 @@
   <link href="/styles/nav_bar.css" media="all" rel="stylesheet" type="text/css" />
   <link href="/pages/more_about_me.css" media="all" rel="stylesheet" type="text/css" />
 
-<style>
-  #about-me{
-    padding-top: 0;
-  }
-</style>
 </head>
 
 <body>
   <!-- Header -->
-  <header id="header">
-    <!-- <nav class="nav">
-      <div class="logo">
-        <a href="#">ms<span>dumbuya</span></a>
-      </div>
+    <!-- Header & Navigation -->
+    <header id="header">
+      <nav class="nav">
+        <div class="logo">
+          <a href="#">ms<span>dumbuya</span></a>
+          <i class="uil uil-bars navOpenBtn"></i>
+        </div>
+  
+        <ul class="nav-links">
+          <i class="uil uil-times navCloseBtn" aria-label="Close Navigation"></i>
+          <li><a href="index.html" aria-label="Go to Home">Home</a></li>
+          <li><a href="#about-me" aria-label="Go to About Section">About</a></li>
+          <li><a href="#" aria-label="View Projects">Projects</a></li>
+          <li><a href="#" aria-label="Contact Me">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-      <ul class="nav-links">
-        <i class="uil uil-times navCloseBtn"></i>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact Us</a></li>
-      </ul>
-
-      <button>
-        <i class="uil uil-bars navOpenBtn">=</i>
-      </button>
-    </nav> -->
-
-    <nav class="nav">
-      <div class="logo">
-        <a href="#">ms<span>dumbuya</span></a>
-      </div>
-      <i class="uil uil-bars navOpenBtn">+</i>
-
-      <ul class="nav-links">
-        <i class="uil uil-times navCloseBtn">=</i>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="#about-me" class="active">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    
 
 
   <main id="main">
-    <!--===================== Hero section =====================-->
-   
-
     <!--===================== About Me section =====================-->
     <section id="about-me" class="container">
       <div class="about-me-img-content">
         <img src="../images/img10.jpg" alt="Picture of Mohamed" />
-        <!-- <img src="../images/img7.png" alt=""> -->
       </div>
       <div class="about-me-text-content">
         <header>
-          <h3>More About Me</h3>
+          <h1>More About Me</h1>
           <p>
-            <!-- Hi, I'm Mohamed, a passionate front-end web developer with a strong foundation in crafting user-friendly and
-            visually appealing digital experiences. With a keen eye for detail and a commitment to innovation, I aim to
-            bridge the gap between creativity and technology.
-            <br><br> -->
             My journey in tech has been fueled by a desire to solve real-world problems and empower individuals through
             accessible, cutting-edge solutions. From developing interactive platforms like UniGuide to creating dynamic,
             engaging websites, I continuously strive to make a meaningful impact in the tech space.
@@ -102,11 +133,12 @@
     </section>
       <div class="intro-text">
         <h1>The mind is the limit. When you face your struggles, you overcome them.</h1>
-        <p>- Mohamed, Aspiring Software Engineer and Tech Educator</p>
-    </div>
-
-
-    <div class="about-me-container">
+        <p>- Mohamed Super, Aspiring Software Engineer and Tech Educator</p>
+      </div>
+      
+      <hr>
+      
+      <div class="about-me-container">
       <section class="resume-container">
           <!-- <h2>RESUME</h2> -->
           <div class="resume-section"> 
