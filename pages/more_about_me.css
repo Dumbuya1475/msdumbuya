@@ -169,7 +169,11 @@ footer p {
     text-align: center;
   }
 }
-
+header .uniguide{
+  color: var(--extra-color);
+  text-decoration: underline;
+  font-weight: bold;
+}
 @media (max-width: 480px) {
   #about-me{
     margin: 4.9rem 0;
