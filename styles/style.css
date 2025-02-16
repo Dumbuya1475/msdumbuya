@@ -8,8 +8,14 @@
   scroll-behavior: smooth;
 }
 
+body {
+  /* background-color: #1f1c2c; */
+  /* background-color: #928dab; */
+}
+
 :root {
   --primary-bg: #fff;
+  /* --primary-bg: #f87060; */
   --secondary-bg: #eee;
 
   --border-color: #ccc;
@@ -76,6 +82,13 @@ main {
 
 /*========================= Header styles ========================= */
 
+#header nav .logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
 #header nav .logo>a {
   font-size: 2rem;
   color: var(--extra-color);
@@ -140,7 +153,6 @@ img {
 
 .nav-links .active {
   color: var(--extra-color);
-  color: red;
   /* background-color: rebeccapurple; */
 }
 
@@ -320,6 +332,12 @@ img {
   margin-bottom: 2rem;
 }
 
+#projects header a {
+  color: var(--extra-color);
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .projects-content-container {
   gap: 2rem;
   display: grid;
@@ -357,6 +375,10 @@ img {
   transform: scale(1.06);
 }
 
+.project-card a {
+  color: #2e8a56;
+}
+
 .project-card h4 {
   font-size: large;
   color: var(--extra-color);
@@ -367,24 +389,26 @@ img {
 .project-card p {
   color: var(--primary-color);
   font-size: large;
+  margin-bottom: 1rem;
 }
 
 .project-card ul {
   display: flex;
   gap: 1rem;
   margin: 1rem 0;
+  flex-direction: column;
 }
 
 .project-card li {
-  /* padding: 0.1rem; */
-  /* background: var(--extra-color); */
-  /* width: 2rem; */
-  /* height: 2rem; */
-  /* border-radius: 50%; */
+  display: flex;
+  align-items: center;
+  /* background-color: #333; */
 }
 
 .project-card-tech-stack i {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  color: var(--extra-color);
+  font-family: sans-serif;
 }
 
 /* Skills section */
@@ -505,109 +529,88 @@ hr {
   color: var(--primary-bg);
 }
 
-/* Contact section */
+/*===================== Contact Section =====================*/
 #contact {
-  padding: 5rem 0;
-}
-
-.contact-section-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.contact-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 5rem;
+  gap: 2rem;
+  padding: 100px 20px;
+  background-color: #f9f9f9;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  background-color: var(--extra-color);
+  width: 75%;
+}
+
+.contact-section-header h2 {
+  font-size: 2rem;
+  color: #222;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .contact-section-header p {
-  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: #fff;
+  width: 200px;
+  margin-bottom: 30px;
 }
 
+/* Contact Container */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Contact Details */
 .contact-social-links {
-  background: red;
-  padding: 2rem;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  max-width: 400px;
   width: 100%;
-  height: 100%;
 }
 
 .contact-social-links ul {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  /* width: 100%; */
-  /* height: 100%; */
-  gap: 3rem;
-  background-color: #333;
+  list-style: none;
+  padding: 0;
 }
 
-.contact-social-links li {
-  padding: 1rem;
-  margin: 3rem;
-  width: 2rem;
-  /* height: 2rem; */
-  position: absolute;
-  /* position: relative; */
-  background: var(--extra-color);
+.contact-social-links ul li {
+  font-size: 1.1rem;
+  color: #444;
+  margin: 10px 0;
 }
 
-.contact-social-links #tooltip-1 {
-  top: 0;
-  left: 0;
-  transform: translateY(-50%);
-  z-index: 100;
+.contact-social-links ul li a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-.contact-social-links #tooltip-2 {
-  background: blue;
-  bottom: 0;
-  right: 0;
-  transform: translateY(50%);
+.contact-social-links ul li a:hover {
+  color: var(--primary-color);
 }
 
-.contact-social-links #tooltip-3 {
-  background: pink;
-  top: 0;
-}
 
-.contact-social-links #tooltip-4 {
-  background: brown;
-  bottom: 0;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.contact-social-links #tooltip-3 {
-  background: pink;
-  top: 0;
-}
-
-.form {
-  width: 100%;
-}
-
-.form-control {
-  display: flex;
-  flex-direction: column;
-  /* gap: 1rem; */
-  /* background: red; */
-  width: 100%;
-  height: 100%;
-}
-
-.form-control textarea,
-.form-control input {
-  padding: 1rem;
-  width: 100%;
-}
-
-.form-control textarea {
-  resize: none;
-
+  .contact-social-links,
+  .form {
+    max-width: 90%;
+  }
 }
 
 /* Footer section styles */
@@ -816,10 +819,6 @@ hr {
     margin-top: 1rem;
   }
 
-  /* Skills section style [Phone] */
-  .tech-stacks {
-    /* column-gap: 300px; */
-  }
   .tech-stacks {
     grid-template-columns: repeat(2, 1fr);
     columns: 300px;
@@ -868,7 +867,7 @@ hr {
     flex-direction: column-reverse;
     gap: 1rem;
     max-width: 90%;
-    margin: 0rem 0;
+    margin: 3.5rem 0;
     justify-content: center;
     height: 100vh;
   }
@@ -890,13 +889,15 @@ hr {
     gap: 1.2rem;
     flex-direction: row;
   }
-    #hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column-reverse;
-      padding-top: 2rem;
-      justify-content:flex-end;
-    }
+
+  #hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column-reverse;
+    padding-top: 2rem;
+    justify-content: flex-end;
+  }
+
   .hero-img-content ul li {
     border-radius: 50% 30%;
   }
@@ -942,6 +943,30 @@ hr {
   .tech-stacks .stack {
     border: 1px solid var(--border-color);
   }
+
+  #contact {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: #f9f9f9;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    background-color: var(--extra-color);
+    width: 90%;
+  }
+
+  /* Contact Details */
+  .contact-social-links {
+    /* background:transparent; */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    max-width: 100%;
+    width: 100%;
+  }
+
 
   /* Footer section style [Phone] */
   #footer {
