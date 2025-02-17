@@ -20,11 +20,39 @@
   <meta name="twitter:description" content="UniGuide helps students navigate career paths with detailed course and job insights.">
   <meta name="twitter:image" content="/images/project3.png">
   
-  <link rel="canonical" href="https://msdumbuya.tech/case-study.html">
+  <link rel="canonical" href="https://msdumbuya.tech/uniguide.html">
   <title>Case Study - UniGuide</title>
 
   <!-- Internal Styles -->
   <style>
+    
+/* =============================
+course image slideshow style
+============================= */
+#slideshow-container {
+  max-width: 800px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+
+:root {
+  --primary-bg: #fff;
+  /* --primary-bg: #f87060; */
+  --secondary-bg: #eee;
+
+  --border-color: #ccc;
+
+  --primary-color: #333;
+  --secondary-color: grey;
+  --extra-color: #2e8a56;
+}
+
     body {
       font-family: 'Arial', sans-serif;
       margin: 0;
@@ -35,7 +63,7 @@
     }
 
     header {
-      background-color: #333;
+      background-color: var(--extra-color);
       color: #fff;
       padding: 1rem 0;
       text-align: center;
@@ -59,7 +87,16 @@
     h1, h2, h3 {
       color: #333;
     }
-
+h2{
+  padding: 0;
+  margin: 0;
+  color: var(--extra-color);
+  width: fit-content;
+  margin-top: 2rem;
+}
+p{
+padding: 0;  margin: 0;
+}
     img {
       max-width: 100%;
       height: auto;
@@ -123,7 +160,24 @@
     <!-- Case Study Title & Intro -->
     <section class="case-study">
       <h1>Case Study: UniGuide - Empowering Students' Career Choices</h1>
-      <img src="/images/project3.png" alt="Screenshot of the UniGuide platform showcasing its features and design">
+      <div class="course-ing-card">
+        <div id="slideshow-container">
+          <!-- Slides -->
+          <div class="mySlides">
+            <img src="/images/project3.png" alt="Screenshot of the UniGuide platform showcasing its features and design">
+          </div>
+          <div class="mySlides">
+            <img src="/images/project2.png" alt="Screenshot of the UniGuide platform showcasing its features and design">
+          </div>
+          <div class="mySlides">
+            <img src="/images/project4.png" alt="Screenshot of the UniGuide platform showcasing its features and design">
+          </div>
+        </div>
+
+        <!-- <img src="assets/universities/SE.jpg" alt=""> -->
+      </div>
+      
+      <!-- <img src="/images/project3.png" alt="Screenshot of the UniGuide platform showcasing its features and design"> -->
       
       <p>
         <strong>UniGuide</strong> is a comprehensive career guidance platform designed to help students <strong>make informed academic and career choices</strong>. 
@@ -204,5 +258,25 @@
     <p>© 2025 Mohamed Super Dumbuya</p>
   </footer>
 
+    <!-- JavaScript to handle the image slide show in course section -->
+    <script>
+      let slideIndex = 0;
+      showSlides();
+  
+      function showSlides() {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change slide every 2 seconds
+      }
+    </script>
+  
 </body>
 </html>
