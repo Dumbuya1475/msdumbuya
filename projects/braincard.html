@@ -34,6 +34,21 @@
       --extra-color: #2e8a56;
     }
 
+    /* =============================
+course image slideshow style
+============================= */
+#slideshow-container {
+  max-width: 800px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+
     body {
       font-family: 'Arial', sans-serif;
       margin: 0;
@@ -94,6 +109,24 @@
   <main>
     <section class="case-study">
       <h1>Case Study: BrainCard - Boost Your Memory & Focus</h1>
+      <div class="course-ing-card">
+        <div id="slideshow-container">
+          <!-- Slides -->
+          <div class="mySlides">
+            <img src="/images/project3.png" alt="Screenshot of the UniGuide platform showcasing its features and design">
+          </div>
+          <div class="mySlides">
+            <img src="/images/project2.png" alt="Screenshot of the UniGuide platform showcasing its features and design">
+          </div>
+          <div class="mySlides">
+            <img src="/images/project4.png" alt="Screenshot of the UniGuide platform showcasing its features and design">
+          </div>
+        </div>
+
+        <!-- <img src="assets/universities/SE.jpg" alt=""> -->
+      </div>
+
+
       <p><strong>BrainCard</strong> is an interactive memory card game designed to <strong>enhance cognitive skills</strong> and <strong>boost mental agility</strong>. With engaging challenges, BrainCard helps players improve their memory, concentration, and problem-solving abilities.</p>
     </section>
 
@@ -151,6 +184,27 @@
   <footer>
     <p>&copy; 2025 BrainCard. All Rights Reserved.</p>
   </footer>
+
+    <!-- JavaScript to handle the image slide show in course section -->
+    <script>
+      let slideIndex = 0;
+      showSlides();
+  
+      function showSlides() {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change slide every 2 seconds
+      }
+    </script>
+
 </body>
 
 </html>
