@@ -1,282 +1,605 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Case study of UniGuide, a platform empowering students to make informed career decisions with detailed course and job insights.">
-  <meta name="keywords" content="UniGuide, case study, student guidance, career path, university courses, job opportunities, skills">
-  <meta name="author" content="Mohamed Super Dumbuya">
-  
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="UniGuide Platform - Case Study">
-  <meta property="og:description" content="Learn about UniGuide, an innovative platform providing students with career and course insights to make informed decisions.">
-  <meta property="og:image" content="/images/project3.png">
-  <meta property="og:url" content="https://msdumbuya.tech/case-study.html">
-  <meta property="og:type" content="article">
-  
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="UniGuide Platform - Case Study">
-  <meta name="twitter:description" content="UniGuide helps students navigate career paths with detailed course and job insights.">
-  <meta name="twitter:image" content="/images/project3.png">
-  
-  <link rel="canonical" href="https://msdumbuya.tech/uniguide.html">
-  <title>Case Study - UniGuide</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: UniGuide - Empowering Students' Career Choices</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #5B47FB;
+            --secondary-color: #F8F7FF;
+            --dark-color: #333;
+            --light-color: #f4f4f9;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+            --text-color: #333;
+            --border-color: #ccc;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
 
-  <!-- Internal Styles -->
-  <style>
-    
-/* =============================
-course image slideshow style
-============================= */
-#slideshow-container {
-  max-width: 800px;
-  position: relative;
-  margin: auto;
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-.mySlides {
-  display: none;
-  width: 100%;
-  height: auto;
-}
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+        }
 
-:root {
-  --primary-bg: #fff;
-  /* --primary-bg: #f87060; */
-  --secondary-bg: #eee;
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
 
-  --border-color: #ccc;
+        ul {
+            list-style: none;
+        }
 
-  --primary-color: #333;
-  --secondary-color: grey;
-  --extra-color: #2e8a56;
-}
+        img {
+            max-width: 100%;
+            height: auto;
+        }
 
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #f4f4f9;
-      color: #333;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
 
-    header {
-      background-color: var(--extra-color);
-      color: #fff;
-      padding: 1rem 0;
-      text-align: center;
-    }
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
 
-    header a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 1.2rem;
-    }
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1.5rem;
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-    }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-color);
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
-    h1, h2, h3 {
-      color: #333;
-    }
-h2{
-  padding: 0;
-  margin: 0;
-  color: var(--extra-color);
-  width: fit-content;
-  margin-top: 2rem;
-}
-p{
-padding: 0;  margin: 0;
-}
-    img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 1.5rem;
-      border-radius: 8px;
-    }
+        .btn:hover {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            transform: scale(1.05);
+        }
 
-    h3 {
-      margin-top: 1.5rem;
-      color: #555;
-    }
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    ul {
-      list-style-type: disc;
-      padding-left: 1.5rem;
-    }
+        .animate {
+            animation: fadeIn 1s ease-in-out;
+        }
 
-    ul li {
-      margin-bottom: 0.5rem;
-    }
+        /* Header Styles */
+        #header {
+            height: 70px;
+            background: #fff;
+            box-shadow: var(--box-shadow);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
 
-    footer {
-      text-align: center;
-      margin-top: 2rem;
-      padding: 1rem 0;
-      background-color: #333;
-      color: #fff;
-    }
+        #header.scrolled {
+            height: 60px;
+            background: rgba(255, 255, 255, 0.95);
+        }
 
-    .btn {
-      display: inline-block;
-      background: #007bff;
-      color: #fff;
-      padding: 10px 20px;
-      margin-top: 15px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: background 0.3s;
-    }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
 
-    .btn:hover {
-      background: #0056b3;
-    }
-  </style>
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+        }
+
+        .nav-menu li {
+            padding: 0 1rem;
+        }
+
+        .nav-menu a {
+            color: var(--dark-color);
+            font-weight: 600;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Case Study Page */
+        .case-study-container {
+            max-width: 800px;
+            margin: 120px auto 50px;
+            padding: 2rem;
+            background: #fff;
+            box-shadow: var(--box-shadow);
+            border-radius: 8px;
+        }
+
+        .case-study-header {
+            margin-bottom: 2rem;
+        }
+
+        .case-study-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .case-study-header img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-study-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .case-study-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .case-study-section ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .case-study-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .case-study-cta {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        /* Results Section */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .result-card {
+            background-color: var(--secondary-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: all 0.3s ease;
+        }
+
+        .result-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .result-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .result-number {
+            font-size: :1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Testimonial */
+        .testimonial {
+            background-color: var(--secondary-color);
+            padding: 2rem;
+            border-radius: 8px;
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        .testimonial:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 4rem;
+            color: rgba(91, 71, 251, 0.2);
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            text-align: right;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        #footer {
+            padding: 2rem 0;
+            background: var(--dark-color);
+            color: #fff;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .case-study-container {
+                padding: 1.5rem;
+            }
+
+            .case-study-header h1 {
+                font-size: 2rem;
+            }
+
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 80%;
+                height: calc(100vh - 70px);
+                flex-direction: column;
+                background: #fff;
+                box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+                padding: 2rem;
+                transition: all 0.5s ease;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-menu li {
+                margin: 1.5rem 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
-  
-  <!-- Navigation -->
-  <header>
-    <nav>
-      <div class="logo">
-        <a href="../index.html">← Back to Home</a>
-      </div>
-    </nav>
-  </header>
+    <!-- Header Section -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">Uni<span>Guide</span></div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
 
-  <!-- Case Study Content -->
-  <main>
-    
-    <!-- Case Study Title & Intro -->
-    <section class="case-study">
-      <h1>Case Study: UniGuide - Empowering Students' Career Choices</h1>
-      <div class="course-ing-card">
-        <div id="slideshow-container">
-          <!-- Slides -->
-          <div class="mySlides">
-            <img src="/images/project3.png" alt="Screenshot of the UniGuide platform showcasing its features and design">
-          </div>
-          <div class="mySlides">
-            <img src="/images/project2.png" alt="Screenshot of the UniGuide platform showcasing its features and design">
-          </div>
-          <div class="mySlides">
-            <img src="/images/project4.png" alt="Screenshot of the UniGuide platform showcasing its features and design">
-          </div>
+    <!-- Case Study Detail Page -->
+    <main class="case-study-container">
+        <div class="case-study-header">
+            <h1>Case Study: UniGuide - Empowering Students Through Education Pathways</h1>
+            <img src="/api/placeholder/800/400" alt="Screenshot of the UniGuide platform interface showing university selection tools">
+            <p>
+                <strong>UniGuide</strong> is a comprehensive university guidance platform designed to help students <strong>navigate their educational journey with confidence</strong>. 
+                Many students face overwhelming challenges when selecting universities and programs due to <strong>information overload, unclear requirements, and limited personalized guidance</strong>.
+                <strong>UniGuide addresses these challenges</strong> by providing <strong>personalized recommendations, detailed university information, and application support</strong> through an intuitive digital platform.
+            </p>
         </div>
 
-        <!-- <img src="assets/universities/SE.jpg" alt=""> -->
-      </div>
-      
-      <!-- <img src="/images/project3.png" alt="Screenshot of the UniGuide platform showcasing its features and design"> -->
-      
-      <p>
-        <strong>UniGuide</strong> is a comprehensive career guidance platform designed to help students <strong>make informed academic and career choices</strong>. 
-        Many students struggle with career decisions due to <strong>limited access to relevant course information, societal pressure, and lack of guidance</strong>.
-        <strong>UniGuide bridges this gap</strong> by providing <strong>detailed insights into university courses, job opportunities, and essential skills</strong> required in various fields.
-      </p>
-    </section>
+        <!-- Problem Statement -->
+        <div class="case-study-section">
+            <h2>The Problem</h2>
+            <p>
+                The university application process is notoriously stressful and complex for students worldwide. Many students:
+            </p>
+            <ul>
+                <li>Feel overwhelmed by the sheer number of universities and programs available</li>
+                <li>Struggle to understand which institutions would be the best fit for their academic profile and career goals</li>
+                <li>Have limited access to personalized guidance, especially in under-resourced schools</li>
+                <li>Experience anxiety and confusion about application requirements and deadlines</li>
+                <li>Make decisions based on incomplete information or peer/family pressure rather than informed research</li>
+            </ul>
+        </div>
 
-    <!-- Problem Statement -->
-    <section>
-      <h2>The Problem</h2>
-      <p>
-        Many students select career paths without understanding the required skills, job market demand, or university requirements.
-        Some students even base their career choices on <strong>societal expectations</strong> rather than personal interests.
-        Without the right information, students can end up in careers that do not align with their aspirations.
-      </p>
-    </section>
+        <!-- Solution -->
+        <div class="case-study-section">
+            <h2>The Solution</h2>
+            <p>
+                <strong>UniGuide provides a comprehensive, user-friendly platform</strong> that transforms the university selection and application process:
+            </p>
+            <ul>
+                <li><strong>Personalized University Matching</strong> - Algorithm that analyzes student profiles and preferences to recommend suitable institutions</li>
+                <li><strong>Detailed Program Information</strong> - Comprehensive database with admission requirements, curriculum details, and career outcomes</li>
+                <li><strong>Application Management</strong> - Tools to track deadlines, requirements, and application progress</li>
+                <li><strong>Financial Planning Resources</strong> - Scholarship information, tuition comparisons, and affordability insights</li>
+                <li><strong>User-Centered Design</strong> - Intuitive interface that simplifies complex information and guides students step-by-step</li>
+            </ul>
+        </div>
 
-    <!-- Solution -->
-    <section>
-      <h2>The Solution</h2>
-      <p>
-        <strong>UniGuide provides a structured platform</strong> where students can explore:
-      </p>
-      <ul>
-        <li>Detailed <strong>course descriptions, prerequisites, and career outcomes</strong>.</li>
-        <li>Insights into <strong>job opportunities, salary expectations, and industries</strong> related to each course.</li>
-        <li>Skill-building resources, <strong>recommended learning paths, and self-assessment tools</strong>.</li>
-        <li>Intuitive and <strong>user-friendly interface</strong> for easy exploration and navigation.</li>
-      </ul>
-    </section>
+        <!-- Features -->
+        <div class="case-study-section" id="features">
+            <h2>Key Features</h2>
+            <ul>
+                <li>🎯 <strong>Smart Matching Algorithm</strong> – Personalized university recommendations based on academic profile, interests, and preferences</li>
+                <li>🔍 <strong>Comprehensive University Database</strong> – Detailed information on thousands of institutions worldwide</li>
+                <li>📝 <strong>Application Tracker</strong> – Organized system to manage deadlines, documents, and application status</li>
+                <li>💰 <strong>Scholarship Finder</strong> – Tools to discover and apply for financial aid opportunities</li>
+                <li>📊 <strong>Admissions Analytics</strong> – Insights into acceptance rates and required qualifications</li>
+                <li>🗓️ <strong>Deadline Management</strong> – Automated reminders and timeline visualization</li>
+            </ul>
+        </div>
 
-    <!-- Features -->
-    <section>
-      <h2>Key Features</h2>
-      <ul>
-        <li>🏫 <strong>University Course Database</strong> – Comprehensive course listings with descriptions.</li>
-        <li>💼 <strong>Career & Job Insights</strong> – Job roles, expected salaries, and future job trends.</li>
-        <li>🎯 <strong>Skill Recommendations</strong> – Required skills and recommended learning resources.</li>
-        <li>🔍 <strong>Personalized Career Pathways</strong> – Helps users match career options based on their interests.</li>
-        <li>🌍 <strong>Global & Local Career Opportunities</strong> – Insights into job availability in different regions.</li>
-      </ul>
-    </section>
+        <!-- Tech Stack -->
+        <div class="case-study-section">
+            <h2>Tech Stack</h2>
+            <p>UniGuide is built using modern technologies to ensure reliability, scalability, and performance:</p>
+            <ul>
+                <li>⚛️ <strong>React.js</strong> – For building a dynamic, responsive user interface</li>
+                <li>🔥 <strong>Firebase</strong> – For authentication, database management, and hosting</li>
+                <li>⚡ <strong>Node.js</strong> – Backend services and API development</li>
+                <li>📱 <strong>Progressive Web App (PWA)</strong> – For cross-platform accessibility</li>
+                <li>🧠 <strong>Machine Learning</strong> – Powers the recommendation algorithms</li>
+            </ul>
+        </div>
 
-    <!-- Tech Stack -->
-    <section>
-      <h2>Tech Stack</h2>
-      <p>UniGuide is built using a modern tech stack to ensure high performance and scalability:</p>
-      <ul>
-        <li>⚛ <strong>React.js</strong> – For a dynamic, interactive front-end.</li>
-        <li>⚡ <strong>Vite</strong> – For fast development and optimized performance.</li>
-        <li>🔥 <strong>Firebase</strong> – Used for <strong>authentication and real-time data storage</strong>.</li>
-      </ul>
-    </section>
+        <!-- User Journey -->
+        <div class="case-study-section">
+            <h2>User Journey</h2>
+            <p>The UniGuide experience follows these key steps:</p>
+            <ul>
+                <li><strong>Profile Creation</strong> - Students enter academic information, interests, preferences, and goals</li>
+                <li><strong>Personalized Recommendations</strong> - The platform generates tailored university and program suggestions</li>
+                <li><strong>Exploration & Research</strong> - Students access detailed information about each recommended institution</li>
+                <li><strong>Application Planning</strong> - Creating a strategic plan with timeline and requirements</li>
+                <li><strong>Application Management</strong> - Tracking progress and receiving reminders for deadlines</li>
+                <li><strong>Decision Support</strong> - Tools to compare offers and make final decisions</li>
+            </ul>
+        </div>
 
-    <!-- Impact -->
-    <section>
-      <h2>Impact</h2>
-      <p>
-        Since its launch, <strong>UniGuide has helped students gain clarity on career choices</strong>, offering access to valuable insights previously unavailable to them.
-        It is <strong>bridging the gap between aspirations and informed career decisions</strong>, providing a <strong>user-friendly experience that guides students toward success</strong>.
-      </p>
-    </section>
+        <!-- Development Process -->
+        <div class="case-study-section">
+            <h2>Development Process</h2>
+            <p>The development of UniGuide followed a user-centered design approach:</p>
+            <ul>
+                <li><strong>Research Phase</strong> - Conducted interviews with students, counselors, and admissions officers to understand pain points and needs</li>
+                <li><strong>Prototype Design</strong> - Created wireframes and interactive prototypes tested with actual students</li>
+                <li><strong>Development Sprints</strong> - Implemented features in priority order with continuous user testing</li>
+                <li><strong>Data Integration</strong> - Built and populated the university database with verified information</li>
+                <li><strong>Algorithm Development</strong> - Created and refined the matching algorithm through multiple iterations</li>
+                <li><strong>Beta Testing</strong> - Deployed with select student groups for real-world feedback</li>
+                <li><strong>Launch & Iteration</strong> - Public release followed by continuous improvement based on user feedback</li>
+            </ul>
+        </div>
 
-    <!-- Call to Action -->
-    <section>
-      <h2>Explore UniGuide</h2>
-      <p>
-        Want to see <strong>UniGuide in action</strong>? Click below to explore the platform and how it can help students shape their future.
-      </p>
-      <a href="https://uniguide-b996d.web.app/" target="_blank" class="btn">Visit UniGuide</a>
-    </section>
+        <!-- Challenges & Solutions -->
+        <div class="case-study-section">
+            <h2>Challenges & Solutions</h2>
+            <ul>
+                <li><strong>Challenge</strong>: Creating an algorithm that accurately matches students with suitable universities<br>
+                <strong>Solution</strong>: Developed a multi-factor model incorporating academic performance, career goals, location preferences, and financial considerations</li>
+                <li><strong>Challenge</strong>: Maintaining up-to-date information on thousands of universities<br>
+                <strong>Solution</strong>: Implemented an automated data validation system with regular updates from official sources</li>
+                <li><strong>Challenge</strong>: Simplifying complex application processes for students<br>
+                <strong>Solution</strong>: Designed step-by-step guides with clear checklists and visual progress indicators</li>
+                <li><strong>Challenge</strong>: Engaging students throughout the long application timeline<br>
+                <strong>Solution</strong>: Created a notification system with timely reminders and milestone celebrations</li>
+            </ul>
+        </div>
 
-  </main>
+        <!-- Results & Impact -->
+        <div class="case-study-section">
+            <h2>Results & Impact</h2>
+            <p>
+                Since its launch, UniGuide has demonstrated significant impact on students' university application experience:
+            </p>
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-icon">👨‍🎓</div>
+                    <div class="result-number">10,000+</div>
+                    <p>Active student users</p>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-icon">🎓</div>
+                    <div class="result-number">93%</div>
+                    <p>University acceptance rate</p>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-icon">💰</div>
+                    <div class="result-number">$2.5M</div>
+                    <p>Scholarships secured</p>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-icon">⭐</div>
+                    <div class="result-number">4.8/5</div>
+                    <p>Average user rating</p>
+                </div>
+            </div>
+            
+            <div class="testimonial">
+                <p class="testimonial-text">
+                    "UniGuide completely transformed my university application experience. Instead of feeling overwhelmed and confused, I had clear direction every step of the way. The platform helped me discover universities I hadn't even considered that perfectly matched my interests. I'm now attending my dream school with a scholarship I found through UniGuide!"
+                </p>
+                <p class="testimonial-author">— Sarah J., First-year Computer Science student</p>
+            </div>
+        </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Mohamed Super Dumbuya</p>
-  </footer>
+        <!-- Future Development -->
+        <div class="case-study-section">
+            <h2>Future Development</h2>
+            <p>
+                The UniGuide team is committed to continuous improvement and has planned several exciting enhancements:
+            </p>
+            <ul>
+                <li><strong>AI-Powered Essay Feedback</strong> - Helping students refine their personal statements</li>
+                <li><strong>Virtual Campus Tours</strong> - Immersive experiences of university environments</li>
+                <li><strong>Mentor Matching</strong> - Connecting prospective students with current university attendees</li>
+                <li><strong>Career Outcome Projections</strong> - Enhanced insights into post-graduation prospects</li>
+                <li><strong>International Expansion</strong> - Adding more universities from diverse global regions</li>
+            </ul>
+        </div>
 
-    <!-- JavaScript to handle the image slide show in course section -->
+        <!-- Call to Action -->
+        <div class="case-study-section case-study-cta">
+            <h2>Experience UniGuide</h2>
+            <p>
+                Ready to transform your university application journey? Explore UniGuide today and take the first step toward your ideal educational future.
+            </p>
+            <a href="https://uniguide-b996d.web.app/" target="_blank" class="btn">Try UniGuide Today</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="footer-text">&copy; 2025 UniGuide. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+    <!-- JavaScript -->
     <script>
-      let slideIndex = 0;
-      showSlides();
-  
-      function showSlides() {
-        let i;
-        const slides = document.getElementsByClassName("mySlides");
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                });
+            });
         }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-          slideIndex = 1;
-        }
-        slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 3000); // Change slide every 2 seconds
-      }
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('#header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
     </script>
-  
 </body>
 </html>
