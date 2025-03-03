@@ -75,6 +75,7 @@
 .nav-menu a:hover::after {
   width: 100%;
 }
+
 #header .nav-menu {
   display: flex;
 
