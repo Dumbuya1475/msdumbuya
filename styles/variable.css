@@ -9,6 +9,7 @@
  :root {
    /* Light Mode Colors */
    --light-color: #fff;
+   --light-color: #f0f8ff;
    --dark-color: #111827;
    --secondary-color: rgb(245, 235, 235);
    --success-color: #10b981;
