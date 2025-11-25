@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Mohamed Super Dumbuya</title>
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+  <!-- Site styles (match index.html) -->
+  <link rel="stylesheet" href="/styles/nav_bar.css">
+  <link rel="stylesheet" href="/styles/variable.css">
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/responsive.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <!-- Page-specific styles -->
+  <link rel="stylesheet" href="/pages/blog.css">
+</head>
+
+<body>
+  <header id="header">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="/">ms<span>dumbuya</span></a>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="/index.html#hero">Home</a></li>
+        <li><a href="/index.html#about">About</a></li>
+        <li><a href="/index.html#projects">Projects</a></li>
+        <li><a href="/pages/blog.html">Blog</a></li>
+        <li><a href="/index.html#contact">Contact</a></li>
+        <button id="theme-toggle" class="btn">🌙</button>
+      </ul>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-main container">
+    <section class="hero">
+      <h1>Insights & Updates</h1>
+      <p>Articles about my projects, events, and work with Tech Inspire SL.</p>
+    </section>
+
+    <div class="blog-layout">
+      <section class="posts" id="posts-container">
+        <!-- Blog posts will be dynamically inserted here -->
+      </section>
+
+      <aside class="sidebar">
+        <div class="widget search-widget">
+          <h3>Search</h3>
+          <input type="text" placeholder="Search posts...">
+        </div>
+        <div class="widget about-widget">
+          <h3>About Me</h3>
+          <p>I'm Mohamed Super — a front-end developer and tech educator. I build sites and run Tech Inspire SL to mentor young devs in Sierra Leone.</p>
+        </div>
+        <div class="widget categories-widget">
+          <h3>Categories</h3>
+          <ul id="categories-list">
+            <!-- Categories will be dynamically inserted here -->
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer id="footer">
+    <div class="container">
+      <div class="social-icons">
+        <a href="https://github.com/Dumbuya1475" class="social-icon"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/mohamed-super-dumbuya-036034289" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://x.com/msdumbuya1475" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/sdumbuyam/" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/msdumbuya1475" class="social-icon"><i class="fab fa-facebook"></i></a>
+      </div>
+      <p class="footer-text">&copy; 2025 Mohamed Super Dumbuya. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const postsContainer = document.getElementById('posts-container');
+      const categoriesList = document.getElementById('categories-list');
+
+      fetch('/pages/posts.json')
+        .then(response => response.json())
+        .then(posts => {
+          const allCategories = new Set();
+
+          posts.forEach((post, index) => {
+            const postElement = document.createElement('article');
+            postElement.classList.add('post');
+            if (index === 0) {
+              postElement.classList.add('featured');
+            }
+
+            const thumbnailUrl = post.images && post.images.length > 0 ? post.images[0] : '/images/default.jpg';
+
+            postElement.innerHTML = `
+              <img src="${thumbnailUrl}" alt="${post.title}" class="post-thumb">
+              <div class="post-content">
+                <p class="meta">${post.date} • ${post.category}</p>
+                <h2><a href="/pages/post.html?slug=${post.slug}">${post.title}</a></h2>
+                <p>${post.content}</p>
+                <a href="/pages/post.html?slug=${post.slug}" class="read-more">Read more →</a>
+              </div>
+            `;
+
+            postsContainer.appendChild(postElement);
+            allCategories.add(post.category);
+          });
+
+          allCategories.forEach(category => {
+            const categoryElement = document.createElement('li');
+            categoryElement.innerHTML = `<a href="#">${category}</a>`;
+            categoriesList.appendChild(categoryElement);
+          });
+        });
+    });
+  </script>
+  <script src="/scripts/script.js"></script>
+</body>
+
+</html>

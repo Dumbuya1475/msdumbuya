@@ -1,0 +1,88 @@
+[
+  {
+    "id": 1,
+    "title": "Tech Inspire SL — Mentorship Kickoff",
+    "date": "November 2024",
+    "category": "Events",
+    "images": [
+      "/images/events.jpg",
+      "/images/img4.jpg",
+      "/images/img5.jpg",
+      "/images/img6.png"
+    ],
+    "content": "We launched Tech Inspire SL to provide mentorship and hands-on workshops for students across Freetown.",
+    "more_content": "I led sessions on web development fundamentals and helped participants build small portfolio projects. The kickoff event was a huge success, with over 100 students in attendance. We had a great time connecting with the students and sharing our passion for technology. We are excited to see what the future holds for Tech Inspire SL and the students we serve.",
+    "slug": "tech-inspire-kickoff"
+  },
+  {
+    "id": 2,
+    "title": "UniGuide — Helping Students Choose Paths",
+    "date": "July 2024",
+    "category": "Projects",
+    "images": [
+      "/images/uniguide.jpg",
+      "/images/ug.png",
+      "/images/project1.png"
+    ],
+    "content": "UniGuide was built to help students discover programs and scholarships.",
+    "more_content": "I contributed to the front-end and helped integrate guidance flows based on student interests. The platform provides students with a personalized experience, allowing them to explore different career paths and find the right program for them. We are proud of the impact that UniGuide has had on students' lives and we are excited to continue to improve the platform.",
+    "slug": "uniguide-post"
+  },
+  {
+    "id": 3,
+    "title": "Workshop Recap — Responsive Design Bootcamp",
+    "date": "March 2024",
+    "category": "Workshops",
+    "images": [
+      "/images/teaching.jpg",
+      "/images/img7.png",
+      "/images/img8.jpeg",
+      "/images/img9.png"
+    ],
+    "content": "Hands-on session where we taught responsive layout, accessibility basics, and deploying static sites.",
+    "more_content": "Attendees left with live projects and deployment knowledge. The bootcamp was a great success, with attendees from all over the world. We were able to share our knowledge and passion for responsive design with a new generation of developers. We are excited to see what the future holds for our attendees and the web development community as a whole.",
+    "slug": "responsive-bootcamp"
+  },
+  {
+    "id": 4,
+    "title": "Tech Summit 2025",
+    "date": "January 2025",
+    "category": "Events",
+    "images": [
+      "/images/img1.jpg",
+      "/images/img2.jpg",
+      "/images/img3.jpg"
+    ],
+    "content": "I attended the Tech Summit 2025, a gathering of tech enthusiasts and professionals.",
+    "more_content": "I had the opportunity to network with industry leaders and learn about the latest trends in technology. I was particularly drawn to the sessions on the future of artificial intelligence and the role of technology in sustainable development. Networking with industry leaders and fellow tech enthusiasts was an invaluable experience. I had conversations with software engineers from top companies, startup founders who are changing the game, and researchers who are pushing the boundaries of what's possible. These interactions gave me a deeper understanding of the industry and inspired me to continue learning and growing as a developer. The summit also featured a showcase of cutting-edge technologies, from virtual and augmented reality to the latest advancements in machine learning. It was a glimpse into the future, and it left me excited about the possibilities that lie ahead. I left the summit with a renewed sense of purpose and a long list of new ideas to explore. I'm already looking forward to the next one!",
+    "slug": "tech-summit-2025"
+  },
+  {
+    "id": 5,
+    "title": "Knnest Community D3 Challenge",
+    "date": "February 2025",
+    "category": "Events",
+    "images": [
+      "/images/img10.jpg",
+      "/images/project2.png",
+      "/images/project4.png"
+    ],
+    "content": "I participated in the Knnest Community D3 Challenge, a competition to create data visualizations using the D3.js library.",
+    "more_content": "I created a visualization of the global distribution of internet users. The project was a great learning experience. I delved deep into the D3.js library, exploring its powerful features for creating dynamic and interactive visualizations. I also learned a lot about data manipulation and how to effectively communicate insights through data. The process of designing and building the visualization was both challenging and rewarding, and I was proud of the final result. The Knnest community was incredibly supportive throughout the challenge. I received valuable feedback from other participants, and I was inspired by the creativity and talent of the other data visualization enthusiasts. The challenge was a great opportunity to connect with like-minded people and to push my skills to the next level. I'm grateful for the experience and I'm already looking forward to the next challenge!",
+    "slug": "knnest-community-d3-challenge"
+  },
+  {
+    "id": 6,
+    "title": "Christex Hackathon",
+    "date": "March 2025",
+    "category": "Events",
+    "images": [
+      "/images/bg_code.jpg",
+      "/images/me1.png",
+      "/images/moe.png"
+    ],
+    "content": "I took part in the Christex Hackathon, a 24-hour coding competition.",
+    "more_content": "My team and I built a mobile app that helps users find and book appointments with local service providers. The hackathon was an intense and exhilarating experience. We worked around the clock, fueled by coffee and a shared passion for building something meaningful. We collaborated on everything from the app's design and user experience to the backend architecture and database design. It was a true team effort, and I'm proud of what we were able to accomplish in such a short amount of time. Although we didn't win the top prize, we received a lot of positive feedback from the judges and other participants. The experience was a valuable one, and I learned a lot about teamwork, rapid prototyping, and the importance of user-centered design. I'm grateful for the opportunity to have been a part of such a creative and inspiring event, and I'm already looking forward to the next hackathon!",
+    "slug": "christex-hackathon"
+  }
+]

@@ -614,7 +614,14 @@
    padding: 10px;
    border-radius: 55px;
    border: 2px solid var(--light-color);
+   opacity: 0;
+   transform: translateY(20px);
  }
+
+ .project-card:hover .case-study-btn {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
  .case-study-btn a {
    color: #fff;
@@ -624,6 +631,22 @@
    background-color: var(--light-color);
    border: 2px solid var(--extra-color);
    color: var(--extra-color);
+ }
+
+ .view-more-btn-container {
+   text-align: center;
+   margin-top: 2rem;
+ }
+
+ .view-more-btn {
+   background: transparent;
+   border: 2px solid var(--extra-color);
+   color: var(--extra-color);
+ }
+
+ .view-more-btn:hover {
+   background: var(--extra-color);
+   color: #fff;
  }
 
  /* Contact Section */

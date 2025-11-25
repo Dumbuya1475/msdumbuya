@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Post — Mohamed Super Dumbuya</title>
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/styles/nav_bar.css">
+  <link rel="stylesheet" href="/styles/variable.css">
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/responsive.css">
+  <link rel="stylesheet" href="/pages/blog.css">
+
+</head>
+
+<body>
+  <header id="header">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="/">ms<span>dumbuya</span></a>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="/index.html#hero">Home</a></li>
+        <li><a href="/index.html#about">About</a></li>
+        <li><a href="/index.html#projects">Projects</a></li>
+        <li><a href="/pages/blog.html">Blog</a></li>
+        <li><a href="/index.html#contact">Contact</a></li>
+        <button id="theme-toggle" class="btn">🌙</button>
+      </ul>
+      <div classn="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-main container" id="post-container">
+    <!-- Post content will be dynamically inserted here -->
+  </main>
+
+  <footer id="footer">
+    <div class="container">
+      <div class="social-icons">
+        <a href="https://github.com/Dumbuya1475" class="social-icon"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/mohamed-super-dumbuya-036034289" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://x.com/msdumbuya1475" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/sdumbuyam/" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/msdumbuya1475" class="social-icon"><i class="fab fa-facebook"></i></a>
+      </div>
+      <p class="footer-text">&copy; 2025 Mohamed Super Dumbuya. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const postContainer = document.getElementById('post-container');
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get('slug');
+
+      fetch('/pages/posts.json')
+        .then(response => response.json())
+        .then(posts => {
+          const post = posts.find(p => p.slug === slug);
+
+          if (post) {
+            const postElement = document.createElement('div');
+            postElement.classList.add('post-full');
+
+            let imagesHTML = '';
+            if (post.images && post.images.length > 0) {
+              imagesHTML = post.images.map(image => `<img src="${image}" alt="${post.title}" class="post-full-image">`).join('');
+            }
+
+            postElement.innerHTML = `
+              <div class="post-full-content">
+                <p class="meta">${post.date} • ${post.category}</p>
+                <h1>${post.title}</h1>
+                <p>${post.more_content}</p>
+              </div>
+              <div class="post-full-images">
+                ${imagesHTML}
+              </div>
+            `;
+
+            postContainer.appendChild(postElement);
+          } else {
+            postContainer.innerHTML = '<p>Post not found.</p>';
+          }
+        });
+    });
+  </script>
+  <script src="/scripts/script.js"></script>
+</body>
+
+</html>

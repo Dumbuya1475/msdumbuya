@@ -52,3 +52,24 @@ document.addEventListener("mousemove", (e) => {
   cursor.style.left = `${e.clientX}px`;
   cursor.style.top = `${e.clientY}px`;
 });
+
+// Blog Post Search
+const searchInput = document.querySelector('.search-widget input');
+const posts = document.querySelectorAll('.post');
+
+if (searchInput) {
+  searchInput.addEventListener('input', () => {
+    const searchTerm = searchInput.value.toLowerCase();
+
+    posts.forEach(post => {
+      const title = post.querySelector('h2').textContent.toLowerCase();
+      const content = post.querySelector('p').textContent.toLowerCase();
+
+      if (title.includes(searchTerm) || content.includes(searchTerm)) {
+        post.style.display = 'block';
+      } else {
+        post.style.display = 'none';
+      }
+    });
+  });
+}
